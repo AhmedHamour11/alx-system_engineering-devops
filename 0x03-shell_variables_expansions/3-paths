@@ -1,2 +1,7 @@
 #!/bin/bash
-echo $((`echo $PATH | grep -o ":/" | wc -1`+ 1))
+
+# Split the PATH environment variable by the path separator and count the number of directories
+num_path_dirs=$(echo $PATH | tr ':' '\n' | wc -l)
+
+echo "The number of directories in the PATH is: $num_path_dirs"
+
